@@ -4,19 +4,19 @@ A native C++20 Scientific ML & numerical PDE solver benchmarking a LibTorch Phys
 
 ## Problem
 
-The solver uses thermal diffusivity `alpha = 0.05` on `x,y ∈ [0,1]` and `t ∈ [0,0.5]`:
+The solver uses thermal diffusivity $\alpha = 0.05$ on $x,y \in [0,1]$ and $t \in [0,0.5]$:
 
-\[
+$$
 \frac{\partial u}{\partial t} - \alpha\left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right)=0.
-\]
+$$
 
-The initial condition is `u(x,y,0) = sin(πx) sin(πy)`. All four spatial boundaries use homogeneous Dirichlet conditions. The analytical solution is
+The initial condition is $u(x,y,0) = \sin(\pi x)\sin(\pi y)$. All four spatial boundaries use homogeneous Dirichlet conditions. The analytical solution is
 
-\[
+$$
 u(x,y,t)=e^{-2\alpha\pi^2t}\sin(\pi x)\sin(\pi y).
-\]
+$$
 
-For this boundary value problem, thermal energy decays according to the analytical Dirichlet dissipation law `E(t) = E(0) e^(-2 alpha pi^2 t)`. The validator compares numerical energy against that decay law; it does not treat energy as constant.
+For this boundary value problem, thermal energy decays according to the analytical Dirichlet dissipation law $E(t) = E(0)e^{-2\alpha\pi^2t}$. The validator compares numerical energy against that decay law; it does not treat energy as constant.
 
 ## Implementation
 
@@ -61,17 +61,17 @@ The checked-in summary was generated with seed 42, 2,400 PINN epochs, one LibTor
 | Metric | FDM | PINN | Notes |
 |---|---:|---:|---:|
 | Grid | 129 × 129 | 129 × 129 | 16,641 points |
-| Time steps / horizon | 200 | Continuous time | `t ∈ [0, 0.5]` |
+| Time steps / horizon | 200 | Continuous time | $t \in [0, 0.5]$ |
 | Training epochs / best epoch | — | 2,400 / 2,400 | Seed 42 |
 | Training time | — | 89.095872 s | Measured on this host |
 | Solve time | 3.376372 s | — | 200 FDM steps |
-| Mean Gauss-Seidel iterations per step | 57.83 | — | Tolerance `1e-9` |
+| Mean Gauss-Seidel iterations per step | 57.83 | — | Tolerance $10^{-9}$ |
 | Relative L2 error vs. exact | 0.0634% | 1.2574% | Measured on the 129 × 129 grid |
 | Relative L2 error vs. FDM | — | 1.2720% | — |
 | Maximum absolute error vs. exact | 0.000387 | 0.029869 | — |
 | PINN boundary maximum / RMSE | 0 | 0.029869 / 0.005865 | Homogeneous Dirichlet boundary |
-| Analytical energy at `t = 0.5` | 0.247426 | 0.247426 | Analytical decay law |
-| Integrated energy at `t = 0.5` | 0.247582 | 0.247747 | FDM / PINN |
+| Analytical energy at $t = 0.5$ | 0.247426 | 0.247426 | Analytical decay law |
+| Integrated energy at $t = 0.5$ | 0.247582 | 0.247747 | FDM / PINN |
 | Relative energy-decay error | 0.0634% | 0.1301% | Compared with analytical energy decay |
 | Solve throughput | 985,732.556381 points/s | 533,990.084554 points/s | FDM space-time points; PINN final-grid points |
 | Final-grid evaluation time | — | 31.1635 ms | Single PINN pass |
