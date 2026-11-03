@@ -1,0 +1,46 @@
+seed: 42
+
+pde:
+  alpha: 0.05
+  x_min: 0.0
+  x_max: 1.0
+  y_min: 0.0
+  y_max: 1.0
+  t_min: 0.0
+  t_max: 0.5
+
+fdm:
+  nx: 129
+  ny: 129
+  nt: 200
+  threads: 8
+  tolerance: 1.0e-9
+  max_iterations: 500
+
+pinn:
+  input_dim: 3
+  output_dim: 1
+  hidden_dim: 64
+  num_hidden_layers: 4
+  learning_rate: 0.003
+  min_learning_rate: 0.00005
+  epochs: 2400
+  batch_pde: 1024
+  batch_ic: 512
+  batch_bc: 512
+  weight_pde: 1.0
+  weight_ic: 30.0
+  weight_bc: 50.0
+  target_rel_l2: 0.013
+  torch_num_threads: 1
+
+profiler:
+  batch_sizes: [256, 1024, 4096, 16384, 65536]
+  warmup_passes: 5
+  timed_passes: 25
+  ridge_point_flops_per_byte: 13.0
+
+output:
+  hdf5_path: "data/thermal_fields_2d.h5"
+  benchmark_json: "assets/benchmark_summary.json"
+  roofline_json: "assets/roofline_arithmetic_intensity.json"

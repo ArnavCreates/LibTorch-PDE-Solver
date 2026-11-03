@@ -1,0 +1,123 @@
+{
+  "device": "CPU",
+  "num_threads": 1,
+  "model_parameter_count": 12801,
+  "model_parameter_bytes": 51204,
+  "ridge_point_flops_per_byte": 13,
+  "forward_flops_per_point": 27393,
+  "residual_flops_per_point": 150662,
+  "forward_sweep": [
+    {
+      "batch_size": 256,
+      "mean_latency_ms": 1.45124,
+      "min_latency_ms": 0.9965,
+      "max_latency_ms": 2.1568,
+      "throughput_pts_per_sec": 176401,
+      "arithmetic_intensity_flops_per_byte": 12.0993,
+      "effective_gflops_per_sec": 4.83216,
+      "effective_memory_bandwidth_gb_per_sec": 0.399375,
+      "regime": "Memory-Bandwidth Bound"
+    },
+    {
+      "batch_size": 1024,
+      "mean_latency_ms": 4.96358,
+      "min_latency_ms": 3.6815,
+      "max_latency_ms": 6.4177,
+      "throughput_pts_per_sec": 206303,
+      "arithmetic_intensity_flops_per_byte": 12.9579,
+      "effective_gflops_per_sec": 5.65125,
+      "effective_memory_bandwidth_gb_per_sec": 0.436125,
+      "regime": "Memory-Bandwidth Bound"
+    },
+    {
+      "batch_size": 4096,
+      "mean_latency_ms": 20.6118,
+      "min_latency_ms": 14.3701,
+      "max_latency_ms": 39.3789,
+      "throughput_pts_per_sec": 198721,
+      "arithmetic_intensity_flops_per_byte": 13.1919,
+      "effective_gflops_per_sec": 5.44357,
+      "effective_memory_bandwidth_gb_per_sec": 0.412645,
+      "regime": "Compute-Bound"
+    },
+    {
+      "batch_size": 16384,
+      "mean_latency_ms": 84.4483,
+      "min_latency_ms": 67.3,
+      "max_latency_ms": 100.929,
+      "throughput_pts_per_sec": 194012,
+      "arithmetic_intensity_flops_per_byte": 13.2517,
+      "effective_gflops_per_sec": 5.31457,
+      "effective_memory_bandwidth_gb_per_sec": 0.401047,
+      "regime": "Compute-Bound"
+    },
+    {
+      "batch_size": 65536,
+      "mean_latency_ms": 296.116,
+      "min_latency_ms": 250.31,
+      "max_latency_ms": 346.272,
+      "throughput_pts_per_sec": 221319,
+      "arithmetic_intensity_flops_per_byte": 13.2668,
+      "effective_gflops_per_sec": 6.06259,
+      "effective_memory_bandwidth_gb_per_sec": 0.456975,
+      "regime": "Compute-Bound"
+    }
+  ],
+  "residual_sweep": [
+    {
+      "batch_size": 256,
+      "mean_latency_ms": 4.90195,
+      "min_latency_ms": 3.9191,
+      "max_latency_ms": 6.1479,
+      "throughput_pts_per_sec": 52224.1,
+      "arithmetic_intensity_flops_per_byte": 12.6224,
+      "effective_gflops_per_sec": 7.86816,
+      "effective_memory_bandwidth_gb_per_sec": 0.623348,
+      "regime": "Memory-Bandwidth Bound"
+    },
+    {
+      "batch_size": 1024,
+      "mean_latency_ms": 17.9324,
+      "min_latency_ms": 13.7845,
+      "max_latency_ms": 26.3555,
+      "throughput_pts_per_sec": 57103.5,
+      "arithmetic_intensity_flops_per_byte": 12.9479,
+      "effective_gflops_per_sec": 8.60329,
+      "effective_memory_bandwidth_gb_per_sec": 0.664456,
+      "regime": "Memory-Bandwidth Bound"
+    },
+    {
+      "batch_size": 4096,
+      "mean_latency_ms": 75.0449,
+      "min_latency_ms": 61.4726,
+      "max_latency_ms": 88.6834,
+      "throughput_pts_per_sec": 54580.7,
+      "arithmetic_intensity_flops_per_byte": 13.0319,
+      "effective_gflops_per_sec": 8.22321,
+      "effective_memory_bandwidth_gb_per_sec": 0.631007,
+      "regime": "Compute-Bound"
+    },
+    {
+      "batch_size": 16384,
+      "mean_latency_ms": 195.097,
+      "min_latency_ms": 105.793,
+      "max_latency_ms": 315.409,
+      "throughput_pts_per_sec": 83978.7,
+      "arithmetic_intensity_flops_per_byte": 13.053,
+      "effective_gflops_per_sec": 12.6524,
+      "effective_memory_bandwidth_gb_per_sec": 0.969303,
+      "regime": "Compute-Bound"
+    },
+    {
+      "batch_size": 65536,
+      "mean_latency_ms": 1000.06,
+      "min_latency_ms": 647.682,
+      "max_latency_ms": 1938.18,
+      "throughput_pts_per_sec": 65531.8,
+      "arithmetic_intensity_flops_per_byte": 13.0583,
+      "effective_gflops_per_sec": 9.87313,
+      "effective_memory_bandwidth_gb_per_sec": 0.756078,
+      "regime": "Compute-Bound"
+    }
+  ]
+}

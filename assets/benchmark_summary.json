@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "equation": "2D Transient Heat Diffusion Equation",
+    "alpha": 0.050000,
+    "domain": "[0.000000, 1.000000] x [0.000000, 1.000000] x [0.000000, 0.500000]",
+    "grid_resolution": [129, 129],
+    "time_steps": 200
+  },
+  "pinn_training": {
+    "epochs": 2400,
+    "best_epoch": 2400,
+    "seed": 42,
+    "total_loss": 0.005438,
+    "pde_loss": 0.002658,
+    "ic_loss": 0.000029,
+    "bc_loss": 0.000038,
+    "training_time_sec": 89.095872,
+    "model_parameters": 12801
+  },
+  "fdm_benchmark": {
+    "wallclock_time_sec": 3.376372,
+    "single_step_time_ms": 16.881861,
+    "total_iterations": 11566,
+    "mean_iterations_per_step": 57.830000,
+    "throughput_pts_per_sec": 985732.556381,
+    "threads": 8
+  },
+  "surrogate_evaluation": {
+    "grid_eval_time_ms": 31.163500,
+    "throughput_pts_per_sec": 533990.084554,
+    "speedup_vs_total_fdm": 108.343806
+  },
+  "accuracy_and_conservation": {
+    "rel_l2_pinn_vs_exact": 0.012574,
+    "rel_l2_fdm_vs_exact": 0.000634,
+    "rel_l2_pinn_vs_fdm": 0.012720,
+    "max_err_pinn_vs_exact": 0.029869,
+    "max_err_fdm_vs_exact": 0.000387,
+    "boundary_max_error": 0.029869,
+    "boundary_rmse": 0.005865,
+    "exact_energy_t0": 0.405285,
+    "exact_energy_t_final": 0.247426,
+    "fdm_energy_t_final": 0.247582,
+    "pinn_energy_t_final": 0.247747,
+    "fdm_energy_rel_error": 0.000634,
+    "pinn_energy_rel_error": 0.001301
+  }
+}
