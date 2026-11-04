@@ -112,4 +112,4 @@ target_link_libraries(pde_unit_tests
         GTest::gtest_main
 )
 
-add_test(NAME PDEComponentsTest COMMAND pde_unit_tests)
+add_test(NAME PdeUnitTests COMMAND pde_unit_tests)
